@@ -2,11 +2,11 @@
 # Account for the attempts that will not satisfy the numerical input given without breaking or restarting the program
 # Use a function with 5 variable parameteres to identify the highest numbers
 # Assign the input variables to the funtion
-# Run the program
+# The program must compare the inputs 1st & 2nd and 3rd & 4th simultaneously, then compare the values to the 5th.
 
 
 
-# The first number disappears when the user didn't give a numerical value at the second prompt, this fixes that
+# The preceding numbers disappear when the user didn't give a numerical value at the present prompt, this function solves that.
 def prompt(numerical_input):
     while True:
         try:
@@ -15,23 +15,45 @@ def prompt(numerical_input):
         except ValueError: 
             print("Please Enter a valid number")
 
-# assigns the returned value to a variable
+# Assigns the returned value to a variable
 def variable_assignment():
     user_input1 = prompt("Enter a number: ")
     user_input2 = prompt("Enter a second number: ")
-    return user_input1, user_input2
+    user_input3 = prompt("Enter a third number: ")
+    user_input4 = prompt("Enter a fourth number: ")
+    user_input5 = prompt("Enter a fifth number: ")
+    return user_input1, user_input2, user_input3, user_input4, user_input5
 
-#The first two is working, however, this function is not being initiated for some reason
-def find_the_highest_number(user_input1, user_input2):
+
+# Finds the highest number by simultaneously compares the numbers at 1st and 2nd place and 3rd and 4th, then compares it to the 5th
+def find_the_highest_number(user_input1, user_input2, user_input3, user_input4, user_input5):
     if user_input1 > user_input2:
-        print(user_input1)
+        result1 = user_input1
+
     else:
-        print(user_input2)
+        result1 = user_input2
 
 
+    if user_input3 > user_input4:
+        result2 = user_input3
+    else:
+        result2 = user_input4
 
-user_input1, user_input2 = variable_assignment()
-find_the_highest_number(user_input1, user_input2)
+
+    if result1 > result2:
+        if result1 > user_input5:
+            print(result1)
+        else:
+            print(user_input5)
+
+    else:
+        if result2 > user_input5:
+            print(result2)
+        else:
+            print(user_input5)
+
+user_input1, user_input2, user_input3, user_input4, user_input5 = variable_assignment()
+find_the_highest_number(user_input1, user_input2, user_input3, user_input4, user_input5)
 
         
     
