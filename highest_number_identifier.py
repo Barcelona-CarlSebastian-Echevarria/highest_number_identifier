@@ -9,14 +9,22 @@
 
 
 # The preceding numbers disappear when the user didn't give a numerical value at the present prompt, this function solves that.
+# I've also added a restart and quit functionality for the ease of use
 def prompt(numerical_input):
     while True:
-        try:
-            ask_user = int(input(numerical_input))
-            return ask_user
-        except ValueError: 
-            print("Please enter a number")
-            
+        ask_user = input(numerical_input)
+        if ask_user.lower() == 'q':
+             quit()
+        elif ask_user.lower() == 'p':
+            try_again = variable_assignment()
+        else:
+            try:
+               number = float(ask_user)
+               return number
+            except ValueError: 
+               print("Please enter a number")
+
+
 
 # Assigns the returned value to a variable
 def variable_assignment():
