@@ -1,3 +1,4 @@
+
 # Prompt the user to input 5 numerical values
 # Account for the attempts that will not satisfy the numerical input given without breaking or restarting the program
 # Use a function with 5 variable parameteres to identify the highest number
@@ -7,19 +8,16 @@
 
 
 
-
-# The preceding numbers disappear when the user didn't give a numerical value at the present prompt, this function solves that.
-# I've also added a restart and quit functionality for the ease of use
+# Retains the entered values even if the user entered an invalid input at the present prompt
+# Adds a quit functionality for ease of use
 def prompt(numerical_input):
     while True:
         ask_user = input(numerical_input)
         if ask_user.lower() == 'q':
              quit()
-        elif ask_user.lower() == 'p':
-            try_again = variable_assignment()
         else:
             try:
-               number = float(ask_user)
+               number = int(ask_user)
                return number
             except ValueError: 
                print("Please enter a number")
@@ -28,6 +26,7 @@ def prompt(numerical_input):
 
 # Assigns the returned value to a variable
 def variable_assignment():
+    print("Press 'q' to quit (Note: The program is not case-sensitive)")
     user_input1 = prompt("Enter a number: ")
     user_input2 = prompt("Enter a second number: ")
     user_input3 = prompt("Enter a third number: ")
