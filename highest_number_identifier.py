@@ -6,24 +6,32 @@
 
 
 
-#Initial testing
-def get_number():
+# The first number disappears when the user didn't give a numerical value at the second prompt, this fixes that
+def prompt(numerical_input):
     while True:
-        try: 
-            user_input1 = int(input("Enter a number: "))
-            user_input2 = int(input("Enter a number: "))
-            return user_input1, user_input2
+        try:
+            ask_user = int(input("Enter a number: "))
+            return ask_user
+        except ValueError: 
+            print("Please Enter a valid number")
 
-        except ValueError:
-            print("Enter a numerical value")
-    
+# assigns the returned value to a variable
+def variable_assignment():
+    user_input1 = prompt("Enter a number: ")
+    user_input2 = prompt("Enter a second number: ")
+    return user_input1, user_input2
 
-result1, result2 = get_number()
-if result1 > result2:
-    print(result1)
-else:
-    print(result2)
+#The first two is working, however, this function is not being initiated for some reason
+def find_the_highest_number(user_input1, user_input2):
+    if user_input1 > user_input2:
+        print(user_input1)
+    else:
+        print(user_input2)
 
-get_number()
+
+
+variable_assignment()
+
+
         
     
