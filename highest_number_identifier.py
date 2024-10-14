@@ -30,8 +30,8 @@ def find_the_highest_number(user_input1, user_input2):
 
 
 
-variable_assignment()
-
+user_input1, user_input2 = variable_assignment()
+find_the_highest_number(user_input1, user_input2)
 
         
     
