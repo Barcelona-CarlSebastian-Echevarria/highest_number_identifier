@@ -30,7 +30,6 @@ def variable_assignment():
 
 # Finds the highest number by simultaneously comparing the numbers at 1st and 2nd place and 3rd and 4th, then compares it to the 5th
 def find_the_highest_number(user_input1, user_input2, user_input3, user_input4, user_input5):
-    
     if user_input1 > user_input2:
         result1 = user_input1
 
@@ -46,18 +45,19 @@ def find_the_highest_number(user_input1, user_input2, user_input3, user_input4, 
 
     if result1 > result2:
         if result1 > user_input5:
-            print(f"the highest number among the given is {result1}")
+            return result1
         else:
-            print(f"the highest number among the given is {user_input5}")
+            return user_input5
 
     else:
         if result2 > user_input5:
-            print(f"the highest number among the given is {result2}")
+            return result2
         else:
-            print(f"the highest number among the given is {user_input5}")
+            return user_input5
 
 user_input1, user_input2, user_input3, user_input4, user_input5 = variable_assignment()
-find_the_highest_number(user_input1, user_input2, user_input3, user_input4, user_input5)
+highest_number = find_the_highest_number(user_input1, user_input2, user_input3, user_input4, user_input5)
+print(f"The highest in the given set of numbers is {highest_number}")
 
         
     
