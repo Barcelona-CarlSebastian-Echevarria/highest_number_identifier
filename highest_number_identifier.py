@@ -12,7 +12,7 @@
 def prompt(numerical_input):
     while True:
         try:
-            ask_user = int(input("Enter a number: "))
+            ask_user = int(input(numerical_input))
             return ask_user
         except ValueError: 
             print("Please Enter a valid number")
