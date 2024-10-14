@@ -15,8 +15,8 @@ def prompt(numerical_input):
             ask_user = int(input(numerical_input))
             return ask_user
         except ValueError: 
-            print("Please Enter a valid number")
-
+            print("Please enter a number")
+            
 
 # Assigns the returned value to a variable
 def variable_assignment():
